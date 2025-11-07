@@ -1,0 +1,161 @@
+{
+  "video_id": "GsmJ42YcIF0",
+  "query": "How do I turn on dark mode in the YouTube app on my phone?",
+  "timestamp": "2025-11-07T10:08:01.533335",
+  "test_metrics": {
+    "correct": 8,
+    "incorrect": 2,
+    "not_needed": 6,
+    "missing": 1,
+    "total": 17,
+    "accuracy": 47.05882352941176
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "good": 6,
+      "repeated": 4,
+      "bad": 7
+    },
+    "total_assessed": 17,
+    "details": [
+      {
+        "step": 1,
+        "quality": "good"
+      },
+      {
+        "step": 2,
+        "quality": "repeated"
+      },
+      {
+        "step": 3,
+        "quality": "good"
+      },
+      {
+        "step": 4,
+        "quality": "bad"
+      },
+      {
+        "step": 5,
+        "quality": "bad"
+      },
+      {
+        "step": 6,
+        "quality": "bad"
+      },
+      {
+        "step": 7,
+        "quality": "good"
+      },
+      {
+        "step": 8,
+        "quality": "good"
+      },
+      {
+        "step": 9,
+        "quality": "good"
+      },
+      {
+        "step": 10,
+        "quality": "bad"
+      },
+      {
+        "step": 11,
+        "quality": "good"
+      },
+      {
+        "step": 12,
+        "quality": "repeated"
+      },
+      {
+        "step": 13,
+        "quality": "repeated"
+      },
+      {
+        "step": 14,
+        "quality": "bad"
+      },
+      {
+        "step": 15,
+        "quality": "bad"
+      },
+      {
+        "step": 16,
+        "quality": "repeated"
+      },
+      {
+        "step": 17,
+        "quality": "bad"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "not_needed"
+    },
+    {
+      "step": 2,
+      "verification": "not_needed"
+    },
+    {
+      "step": 3,
+      "verification": "correct"
+    },
+    {
+      "step": 4,
+      "verification": "not_needed"
+    },
+    {
+      "step": 5,
+      "verification": "incorrect"
+    },
+    {
+      "step": 6,
+      "verification": "incorrect"
+    },
+    {
+      "step": 7,
+      "verification": "correct"
+    },
+    {
+      "step": 8,
+      "verification": "correct"
+    },
+    {
+      "step": 9,
+      "verification": "correct"
+    },
+    {
+      "step": 10,
+      "verification": "correct"
+    },
+    {
+      "step": 11,
+      "verification": "correct"
+    },
+    {
+      "step": 12,
+      "verification": "correct"
+    },
+    {
+      "step": 13,
+      "verification": "correct"
+    },
+    {
+      "step": 14,
+      "verification": "not_needed"
+    },
+    {
+      "step": 15,
+      "verification": "not_needed"
+    },
+    {
+      "step": 16,
+      "verification": "missing"
+    },
+    {
+      "step": 17,
+      "verification": "not_needed"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "video_id": "iDDpM1AcmI4",
+  "query": "How to set up Apple Mail on an iPhone?",
+  "timestamp": "2025-11-07T09:59:40.028276",
+  "test_metrics": {
+    "correct": 4,
+    "incorrect": 0,
+    "not_needed": 5,
+    "missing": 0,
+    "total": 9,
+    "accuracy": 44.44444444444444
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "bad": 5,
+      "good": 3,
+      "repeated": 1
+    },
+    "total_assessed": 9,
+    "details": [
+      {
+        "step": 1,
+        "quality": "bad"
+      },
+      {
+        "step": 2,
+        "quality": "bad"
+      },
+      {
+        "step": 3,
+        "quality": "good"
+      },
+      {
+        "step": 4,
+        "quality": "repeated"
+      },
+      {
+        "step": 5,
+        "quality": "good"
+      },
+      {
+        "step": 6,
+        "quality": "good"
+      },
+      {
+        "step": 7,
+        "quality": "bad"
+      },
+      {
+        "step": 8,
+        "quality": "bad"
+      },
+      {
+        "step": 9,
+        "quality": "bad"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "not_needed"
+    },
+    {
+      "step": 2,
+      "verification": "not_needed"
+    },
+    {
+      "step": 3,
+      "verification": "correct"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "correct"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    },
+    {
+      "step": 7,
+      "verification": "not_needed"
+    },
+    {
+      "step": 8,
+      "verification": "not_needed"
+    },
+    {
+      "step": 9,
+      "verification": "not_needed"
+    }
+  ]
+}

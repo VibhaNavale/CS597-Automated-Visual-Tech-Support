@@ -1,0 +1,72 @@
+{
+  "video_id": "Zfmy6XvJmz0",
+  "query": "How do I connect my phone to a Wi-Fi network?",
+  "timestamp": "2025-11-07T11:00:22.993294",
+  "test_metrics": {
+    "correct": 5,
+    "incorrect": 1,
+    "not_needed": 0,
+    "missing": 0,
+    "total": 6,
+    "accuracy": 83.33333333333334
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "good": 5,
+      "bad": 1
+    },
+    "total_assessed": 6,
+    "details": [
+      {
+        "step": 1,
+        "quality": "good"
+      },
+      {
+        "step": 2,
+        "quality": "bad"
+      },
+      {
+        "step": 3,
+        "quality": "good"
+      },
+      {
+        "step": 4,
+        "quality": "good"
+      },
+      {
+        "step": 5,
+        "quality": "good"
+      },
+      {
+        "step": 6,
+        "quality": "good"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "correct"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "incorrect"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "correct"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    }
+  ]
+}

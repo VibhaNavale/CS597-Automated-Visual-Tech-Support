@@ -1,0 +1,72 @@
+{
+  "video_id": "j8Xb7REBM0s",
+  "query": "How to increase the text size on iPhone?",
+  "timestamp": "2025-11-07T09:39:35.884656",
+  "test_metrics": {
+    "correct": 2,
+    "incorrect": 1,
+    "not_needed": 3,
+    "missing": 0,
+    "total": 6,
+    "accuracy": 33.33333333333333
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "bad": 4,
+      "good": 2
+    },
+    "total_assessed": 6,
+    "details": [
+      {
+        "step": 1,
+        "quality": "bad"
+      },
+      {
+        "step": 2,
+        "quality": "good"
+      },
+      {
+        "step": 3,
+        "quality": "bad"
+      },
+      {
+        "step": 4,
+        "quality": "good"
+      },
+      {
+        "step": 5,
+        "quality": "bad"
+      },
+      {
+        "step": 6,
+        "quality": "bad"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "incorrect"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "not_needed"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "not_needed"
+    },
+    {
+      "step": 6,
+      "verification": "not_needed"
+    }
+  ]
+}

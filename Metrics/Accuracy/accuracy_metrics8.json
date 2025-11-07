@@ -1,0 +1,97 @@
+{
+  "video_id": "CxOn6oGrFt8",
+  "query": "How can I enable voice typing in the Google keyboard on my phone?",
+  "timestamp": "2025-11-07T11:09:47.143815",
+  "test_metrics": {
+    "correct": 7,
+    "incorrect": 2,
+    "not_needed": 0,
+    "missing": 0,
+    "total": 9,
+    "accuracy": 77.77777777777779
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "bad": 5,
+      "good": 3,
+      "repeated": 1
+    },
+    "total_assessed": 9,
+    "details": [
+      {
+        "step": 1,
+        "quality": "bad"
+      },
+      {
+        "step": 2,
+        "quality": "bad"
+      },
+      {
+        "step": 3,
+        "quality": "bad"
+      },
+      {
+        "step": 4,
+        "quality": "good"
+      },
+      {
+        "step": 5,
+        "quality": "bad"
+      },
+      {
+        "step": 6,
+        "quality": "bad"
+      },
+      {
+        "step": 7,
+        "quality": "good"
+      },
+      {
+        "step": 8,
+        "quality": "repeated"
+      },
+      {
+        "step": 9,
+        "quality": "good"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "incorrect"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "incorrect"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "correct"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    },
+    {
+      "step": 7,
+      "verification": "correct"
+    },
+    {
+      "step": 8,
+      "verification": "correct"
+    },
+    {
+      "step": 9,
+      "verification": "correct"
+    }
+  ]
+}

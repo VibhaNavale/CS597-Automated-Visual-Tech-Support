@@ -1,0 +1,130 @@
+{
+  "video_id": "ij_oJb5hJ6g",
+  "query": "How to change the address on Amazon phone app?",
+  "timestamp": "2025-11-07T08:53:08.215107",
+  "test_metrics": {
+    "correct": 9,
+    "incorrect": 2,
+    "not_needed": 2,
+    "missing": 0,
+    "total": 13,
+    "accuracy": 69.23076923076923
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "good": 7,
+      "bad": 4,
+      "not_relevant": 1,
+      "repeated": 1
+    },
+    "total_assessed": 13,
+    "details": [
+      {
+        "step": 1,
+        "quality": "good"
+      },
+      {
+        "step": 2,
+        "quality": "good"
+      },
+      {
+        "step": 3,
+        "quality": "bad"
+      },
+      {
+        "step": 4,
+        "quality": "good"
+      },
+      {
+        "step": 5,
+        "quality": "bad"
+      },
+      {
+        "step": 6,
+        "quality": "good"
+      },
+      {
+        "step": 7,
+        "quality": "bad"
+      },
+      {
+        "step": 8,
+        "quality": "good"
+      },
+      {
+        "step": 9,
+        "quality": "good"
+      },
+      {
+        "step": 10,
+        "quality": "good"
+      },
+      {
+        "step": 11,
+        "quality": "not_relevant"
+      },
+      {
+        "step": 12,
+        "quality": "repeated"
+      },
+      {
+        "step": 13,
+        "quality": "bad"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "correct"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "incorrect"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "correct"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    },
+    {
+      "step": 7,
+      "verification": "correct"
+    },
+    {
+      "step": 8,
+      "verification": "correct"
+    },
+    {
+      "step": 9,
+      "verification": "correct"
+    },
+    {
+      "step": 10,
+      "verification": "correct"
+    },
+    {
+      "step": 11,
+      "verification": "not_needed"
+    },
+    {
+      "step": 12,
+      "verification": "not_needed"
+    },
+    {
+      "step": 13,
+      "verification": "incorrect"
+    }
+  ]
+}

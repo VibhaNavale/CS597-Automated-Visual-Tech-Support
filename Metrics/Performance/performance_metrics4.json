@@ -1,0 +1,66 @@
+{
+  "video_id": "j8Xb7REBM0s",
+  "query": "How to increase the text size on iPhone?",
+  "created_at": "2025-11-07T09:36:12.868035",
+  "timing": {
+    "video-search": {
+      "duration": 1.71
+    },
+    "video-download": {
+      "duration": 7.07
+    },
+    "frame-extraction": {
+      "duration": 20.0
+    },
+    "ui-screens": {
+      "duration": 0.12
+    },
+    "osatlas-processing": {
+      "duration": 89.39
+    },
+    "total": {
+      "duration": 118.39
+    }
+  },
+  "video_metadata": {
+    "duration_seconds": 26,
+    "views": 1320,
+    "resolution": "hd",
+    "relevance_score": 0,
+    "title": "How to increase text size in iPhone | iPhone tips #shorts",
+    "url": "https://www.youtube.com/watch?v=j8Xb7REBM0s"
+  },
+  "frame_extraction": {
+    "frame_count": 13,
+    "frames_examined": 15,
+    "duplicate_frames_filtered": 2,
+    "duplicate_rate_percent": 13.33,
+    "average_ssim_score": 1.0,
+    "frames_per_minute": 30.59,
+    "video_duration_seconds": 25.5
+  },
+  "osatlas_processing": {
+    "total_steps": 6,
+    "steps_with_coordinates": 5,
+    "steps_with_coordinates_percent": 83.33,
+    "steps_with_thought_and_action": 6,
+    "steps_complete_percent": 100.0,
+    "duplicate_steps_filtered": 1,
+    "frames_processed": 13,
+    "action_type_distribution": {
+      "scroll": 3,
+      "click": 3
+    }
+  },
+  "system_efficiency": {
+    "cache_hit": false,
+    "gpu_memory": {
+      "has_sufficient_memory": true,
+      "memory_info": "Free memory: 16.24 GB"
+    }
+  },
+  "step_count": 0,
+  "frame_count": 13,
+  "total_steps_generated": 6,
+  "last_updated": "2025-11-07T09:38:09.454754"
+}

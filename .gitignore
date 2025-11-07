@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+
+# OS
+.DS_Store
+
+# Project specific
+output/
+test/
+*.log
+
+# Sensitive files
+cookies.txt
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Frontend build
+dist/
+build/
+node_modules/

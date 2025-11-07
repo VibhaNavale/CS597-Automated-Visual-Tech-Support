@@ -1,75 +1,100 @@
 import cv2
-import os
 import numpy as np
+import os
 
-def detect_phone_screen(image):
-    original = image.copy()
-    height, width = image.shape[:2]
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-    thresh = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 2)
-    canny = cv2.Canny(blurred, 50, 150)
-    edges = cv2.bitwise_or(thresh, canny)
-    kernel = np.ones((3, 3), np.uint8)
-    dilated = cv2.dilate(edges, kernel, iterations=1)
-    contours, _ = cv2.findContours(dilated.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    contours = sorted(contours, key=cv2.contourArea, reverse=True)
-    phone_contours = []
+def detect_phone_screen(frame):
+    height, width = frame.shape[:2]
+    aspect_ratio = width / height
+    
+    # Detect video orientation based on aspect ratio
+    # Portrait: aspect ratio < 1 (e.g., 0.56 for 9:16 shorts)
+    # Landscape: aspect ratio > 1 (e.g., 1.78 for 16:9 tutorials)
+    is_portrait = aspect_ratio < 1.0
+    
+    if is_portrait:
+        # Portrait videos (shorts) - minimal cropping, phone screen fills most of the frame
+        crop_width_pct = 0.98
+        crop_height_pct = 0.98
+    else:
+        # Landscape videos (tutorials) - more aggressive cropping to remove side margins
+        crop_width_pct = 0.75
+        crop_height_pct = 0.95
+    
+    crop_w = int(width * crop_width_pct)
+    crop_h = int(height * crop_height_pct)
+    
+    x = (width - crop_w) // 2
+    y = (height - crop_h) // 2
+    
+    return (x, y, crop_w, crop_h)
 
-    for contour in contours[:10]:
-        peri = cv2.arcLength(contour, True)
-        approx = cv2.approxPolyDP(contour, 0.02 * peri, True)
-        x, y, w, h = cv2.boundingRect(approx)
-        if w * h < (width * height) / 20:
+def crop_phone_screen(frame, phone_rect):
+    if phone_rect is None:
+        return frame
+    
+    x, y, w, h = phone_rect
+    
+    phone_area = frame[y:y+h, x:x+w]
+    
+    if phone_area.size == 0:
+        return frame
+    
+    min_width, min_height = 200, 300
+    max_width, max_height = 1200, 1800
+    
+    current_w, current_h = phone_area.shape[1], phone_area.shape[0]
+    
+    if current_w < min_width or current_h < min_height:
+        scale = max(min_width / current_w, min_height / current_h)
+        new_w = int(current_w * scale)
+        new_h = int(current_h * scale)
+        phone_area = cv2.resize(phone_area, (new_w, new_h), interpolation=cv2.INTER_CUBIC)
+    elif current_w > max_width or current_h > max_height:
+        scale = min(max_width / current_w, max_height / current_h)
+        new_w = int(current_w * scale)
+        new_h = int(current_h * scale)
+        phone_area = cv2.resize(phone_area, (new_w, new_h), interpolation=cv2.INTER_AREA)
+    
+    return phone_area
+
+def extract_ui_screenshots(input_folder="output/videos", output_folder="output/videos", video_id=None):
+    if video_id is None:
+        video_dirs = os.listdir(input_folder)
+        for vd in video_dirs:
+            if os.path.isdir(os.path.join(input_folder, vd)):
+                extract_ui_screenshots(input_folder, output_folder, vd)
+        return
+    
+    input_path = os.path.join(input_folder, video_id, "frames")
+    output_path = os.path.join(output_folder, video_id, "ui-screens")
+    os.makedirs(output_path, exist_ok=True)
+    
+    if not os.path.exists(input_path):
+        print(f"Input folder {input_path} does not exist")
+        return
+    
+    frame_files = sorted([f for f in os.listdir(input_path) if f.startswith("frame_")])
+    successful = 0
+    failed = 0
+    
+    print(f"UI screen extraction started: processing {len(frame_files)} frames")
+    
+    for frame_file in frame_files:
+        img_path = os.path.join(input_path, frame_file)
+        img = cv2.imread(img_path)
+        
+        if img is None:
+            failed += 1
             continue
-        if len(approx) >= 4 and len(approx) <= 8:
-            aspect_ratio = h / w if w > 0 else 0
-            if aspect_ratio > 1.5 and aspect_ratio < 2.5:
-                phone_contours.append(approx)
-
-    if phone_contours:
-        largest = max(phone_contours, key=cv2.contourArea)
-        x, y, w, h = cv2.boundingRect(largest)
-        return np.array([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], dtype=np.float32)
-
-    return None
-
-def crop_screen_with_perspective(image, screen_contour):
-    if screen_contour is None or len(screen_contour) != 4:
-        return None
-    ordered_points = order_points(screen_contour)
-    width = int(np.linalg.norm(ordered_points[1] - ordered_points[0]))
-    height = int(np.linalg.norm(ordered_points[2] - ordered_points[1]))
-    dst_points = np.array([[0, 0], [width - 1, 0], [width - 1, height - 1], [0, height - 1]], dtype=np.float32)
-    matrix = cv2.getPerspectiveTransform(ordered_points, dst_points)
-    cropped = cv2.warpPerspective(image, matrix, (width, height))
-    return cropped
-
-def order_points(pts):
-    sorted_by_y = pts[np.argsort(pts[:, 1])]
-    top_points = sorted_by_y[:2]
-    bottom_points = sorted_by_y[2:]
-    top_left, top_right = top_points[np.argsort(top_points[:, 0])]
-    bottom_left, bottom_right = bottom_points[np.argsort(bottom_points[:, 0])]
-    return np.array([top_left, top_right, bottom_right, bottom_left], dtype=np.float32)
-
-def extract_ui_screenshots(input_folder="screenshots", output_folder="ui-screens"):
-    screenshot_dirs = os.listdir(input_folder)
-    for query_folder in screenshot_dirs:
-        full_input_path = os.path.join(input_folder, query_folder)
-        full_output_path = os.path.join(output_folder, query_folder)
-        debug_folder = os.path.join(output_folder, "debug")
-        os.makedirs(full_output_path, exist_ok=True)
-        os.makedirs(debug_folder, exist_ok=True)
-        screenshot_files = sorted(os.listdir(full_input_path))
-        for screenshot in screenshot_files:
-            img_path = os.path.join(full_input_path, screenshot)
-            img = cv2.imread(img_path)
-            if img is None:
-                continue
-            screen_contour = detect_phone_screen(img)
-            if screen_contour is not None:
-                cropped_screen = crop_screen_with_perspective(img, screen_contour)
-                if cropped_screen is not None and cropped_screen.size > 0:
-                    save_path = os.path.join(full_output_path, screenshot)
-                    cv2.imwrite(save_path, cropped_screen)
+        
+        phone_rect = detect_phone_screen(img)
+        cropped_screen = crop_phone_screen(img, phone_rect)
+        
+        if cropped_screen is not None and cropped_screen.size > 0:
+            output_file = os.path.join(output_path, frame_file)
+            cv2.imwrite(output_file, cropped_screen, [cv2.IMWRITE_JPEG_QUALITY, 95])
+            successful += 1
+        else:
+            failed += 1
+    
+    print(f"UI screen extraction completed: {successful} successful, {failed} failed")

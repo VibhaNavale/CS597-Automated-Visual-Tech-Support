@@ -1,0 +1,130 @@
+{
+  "video_id": "sv4-TmcqTF4",
+  "query": "What is the best way to improve video quality on Netflix when watching on an iPhone?",
+  "timestamp": "2025-11-07T10:51:46.406026",
+  "test_metrics": {
+    "correct": 7,
+    "incorrect": 6,
+    "not_needed": 0,
+    "missing": 0,
+    "total": 13,
+    "accuracy": 53.84615384615385
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "bad": 4,
+      "good": 6,
+      "repeated": 1,
+      "not_relevant": 2
+    },
+    "total_assessed": 13,
+    "details": [
+      {
+        "step": 1,
+        "quality": "bad"
+      },
+      {
+        "step": 2,
+        "quality": "good"
+      },
+      {
+        "step": 3,
+        "quality": "good"
+      },
+      {
+        "step": 4,
+        "quality": "bad"
+      },
+      {
+        "step": 5,
+        "quality": "bad"
+      },
+      {
+        "step": 6,
+        "quality": "bad"
+      },
+      {
+        "step": 7,
+        "quality": "repeated"
+      },
+      {
+        "step": 8,
+        "quality": "good"
+      },
+      {
+        "step": 9,
+        "quality": "good"
+      },
+      {
+        "step": 10,
+        "quality": "good"
+      },
+      {
+        "step": 11,
+        "quality": "good"
+      },
+      {
+        "step": 12,
+        "quality": "not_relevant"
+      },
+      {
+        "step": 13,
+        "quality": "not_relevant"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "incorrect"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "incorrect"
+    },
+    {
+      "step": 4,
+      "verification": "incorrect"
+    },
+    {
+      "step": 5,
+      "verification": "incorrect"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    },
+    {
+      "step": 7,
+      "verification": "correct"
+    },
+    {
+      "step": 8,
+      "verification": "correct"
+    },
+    {
+      "step": 9,
+      "verification": "correct"
+    },
+    {
+      "step": 10,
+      "verification": "correct"
+    },
+    {
+      "step": 11,
+      "verification": "correct"
+    },
+    {
+      "step": 12,
+      "verification": "incorrect"
+    },
+    {
+      "step": 13,
+      "verification": "incorrect"
+    }
+  ]
+}

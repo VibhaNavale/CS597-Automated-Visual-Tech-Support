@@ -1,0 +1,72 @@
+{
+  "video_id": "kEQGcw0Hyo8",
+  "query": "How\u00a0to enable dark mode\u00a0on WhatsApp?",
+  "timestamp": "2025-11-07T08:56:37.502753",
+  "test_metrics": {
+    "correct": 6,
+    "incorrect": 0,
+    "not_needed": 0,
+    "missing": 0,
+    "total": 6,
+    "accuracy": 100.0
+  },
+  "step_quality_assessment": {
+    "counts": {
+      "good": 5,
+      "not_relevant": 1
+    },
+    "total_assessed": 6,
+    "details": [
+      {
+        "step": 1,
+        "quality": "good"
+      },
+      {
+        "step": 2,
+        "quality": "good"
+      },
+      {
+        "step": 3,
+        "quality": "not_relevant"
+      },
+      {
+        "step": 4,
+        "quality": "good"
+      },
+      {
+        "step": 5,
+        "quality": "good"
+      },
+      {
+        "step": 6,
+        "quality": "good"
+      }
+    ]
+  },
+  "bbox_verifications": [
+    {
+      "step": 1,
+      "verification": "correct"
+    },
+    {
+      "step": 2,
+      "verification": "correct"
+    },
+    {
+      "step": 3,
+      "verification": "correct"
+    },
+    {
+      "step": 4,
+      "verification": "correct"
+    },
+    {
+      "step": 5,
+      "verification": "correct"
+    },
+    {
+      "step": 6,
+      "verification": "correct"
+    }
+  ]
+}

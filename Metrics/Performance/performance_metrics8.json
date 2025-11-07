@@ -1,0 +1,65 @@
+{
+  "video_id": "CxOn6oGrFt8",
+  "query": "How can I enable voice typing in the Google keyboard on my phone?",
+  "created_at": "2025-11-07T11:03:39.388244",
+  "timing": {
+    "video-search": {
+      "duration": 2.66
+    },
+    "video-download": {
+      "duration": 8.53
+    },
+    "frame-extraction": {
+      "duration": 50.01
+    },
+    "ui-screens": {
+      "duration": 0.42
+    },
+    "osatlas-processing": {
+      "duration": 164.95
+    },
+    "total": {
+      "duration": 226.67
+    }
+  },
+  "video_metadata": {
+    "duration_seconds": 33,
+    "views": 9691,
+    "resolution": "hd",
+    "relevance_score": 0,
+    "title": "How to Enable Voice Typing on Android 1",
+    "url": "https://www.youtube.com/watch?v=CxOn6oGrFt8"
+  },
+  "frame_extraction": {
+    "frame_count": 18,
+    "frames_examined": 20,
+    "duplicate_frames_filtered": 2,
+    "duplicate_rate_percent": 10.0,
+    "average_ssim_score": 1.0,
+    "frames_per_minute": 33.32,
+    "video_duration_seconds": 32.42
+  },
+  "osatlas_processing": {
+    "total_steps": 9,
+    "steps_with_coordinates": 9,
+    "steps_with_coordinates_percent": 100.0,
+    "steps_with_thought_and_action": 9,
+    "steps_complete_percent": 100.0,
+    "duplicate_steps_filtered": 3,
+    "frames_processed": 18,
+    "action_type_distribution": {
+      "click": 9
+    }
+  },
+  "system_efficiency": {
+    "cache_hit": false,
+    "gpu_memory": {
+      "has_sufficient_memory": true,
+      "memory_info": "Free memory: 16.24 GB"
+    }
+  },
+  "step_count": 0,
+  "frame_count": 18,
+  "total_steps_generated": 9,
+  "last_updated": "2025-11-07T11:07:23.305817"
+}
